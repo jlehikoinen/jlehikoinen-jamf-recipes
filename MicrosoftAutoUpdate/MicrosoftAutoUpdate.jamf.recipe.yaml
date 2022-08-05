@@ -30,6 +30,11 @@ Process:
   Arguments:
     predicate: '%UPDATE_PREDICATE%'
 
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader
+  Arguments:
+    ea_name: MicrosoftAutoUpdateVersion
+    ea_script_path: microsoft_autoupdate_version.sh
+
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
   Arguments:
     computergroup_name: '%GROUP_NAME%'
@@ -44,8 +49,3 @@ Process:
     icon: '%SELF_SERVICE_ICON%'
     policy_name: '%POLICY_NAME%'
     policy_template: '%POLICY_TEMPLATE%'
-
-- Processor: com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader
-  Arguments:
-    ea_name: MicrosoftAutoUpdateVersion
-    ea_script_path: microsoft_autoupdate_version.sh
